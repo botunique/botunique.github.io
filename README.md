@@ -77,8 +77,8 @@
 | **Raspberry Pi 5** | BCM2712 | 8GB | Homelab Primary |
 | **Ubuntu Server** | Intel i5 | 8GB DDR3 | Homelab Secondary *(WIP)* |
 | **MacBook Pro** | Apple M3 Ultra | 64GB | Work / Graphic Design |
-| **OneXPlayer** | Intel i7 | 16GB DDR4 | Handheld Gaming PC |
-| **Anbernic RG556** | Android | — | Retro Gaming / Streaming |
+| **OneXPlayer Mini** | Intel i7 | 16GB DDR4 | Handheld Gaming PC |
+| **Anbernic RG556** | Android | 8GB DDR4 | Retro Gaming / Streaming |
 
 ---
 
