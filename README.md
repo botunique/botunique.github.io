@@ -1,4 +1,4 @@
-# 👾 Computer Lab — Charlie's Digital Workshop
+# 👾 Computer Lab — Botunique's Digital Workshop
 
 > *Homelab tinkerer. Code hobbyist. Music producer. Retro gamer. Perpetual learner.*
 
