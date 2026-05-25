@@ -1,6 +1,6 @@
 # 👾 Computer Lab — Botunique's Digital Workshop
 
-> *Homelab tinkerer. Code hobbyist. Music producer. Retro gamer. Perpetual learner.*
+> *Homelab tinkerer. Code hobbyist. Music producer. Retro gamer. Graphic Designer. Perpetual learner.*
 
 ---
 
