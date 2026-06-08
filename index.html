@@ -956,54 +956,9 @@
   <div class="divider"></div>
 
   <!-- BLOG -->
-  <section id="blog">
-    <div class="blog-header reveal">
-      <div class="section-label">Writing &amp; Thinking</div>
-      <h2 class="blog-title">The <span class="t-yellow">Journal</span></h2>
-    </div>
-    <div class="blog-grid">
-      <div class="blog-featured reveal">
-  <div class="blog-featured-img">
-    <div class="blog-featured-img-inner">
-      <img src="images/journal/Pixeldab Relaunch_Journal.jpg" 
-           alt="The Relaunch of PixelDab"
-           class="portfolio-img">
-    </div>
+  <div class="blog-grid" id="blogGrid">
+  <!-- dynamically loaded -->
   </div>
-  <div class="blog-date">May 12, 2026</div>
-  <h3 class="blog-featured-title">The Relaunch of PixelDab &mdash; The Next Move</h3>
-  <p class="blog-excerpt">It&apos;s been a few years since I&apos;ve posted or updated anything here. That doesn&apos;t mean I haven&apos;t been working and creating. The last few years have been chaos — but the one constant has been my love for art and design.</p>
-  <a href="https://pixeldab.wordpress.com/blog-2/" class="blog-read-more" target="_blank" rel="noopener">Read Article →</a>
-</div>
-      <div class="blog-col">
-        <div class="blog-secondary reveal">
-          <div class="blog-date">Coming Soon</div>
-          <h4 class="blog-secondary-title">In Progress &mdash; a look at my latest painting and the process behind it</h4>
-          <p class="blog-secondary-excerpt">A walk through the decisions, the detours, and what the canvas looks like before it&apos;s finished.</p>
-          <a href="#" class="blog-read-more">Coming soon</a>
-        </div>
-        <div class="blog-secondary reveal">
-          <div class="blog-date">Coming Soon</div>
-          <h4 class="blog-secondary-title">The Pixeldab Rebrand</h4>
-          <p class="blog-secondary-excerpt">A creative summery of the Pixeldab rebranding.</p>
-          <a href="#" class="blog-read-more">Coming soon</a>
-        </div>
-      </div>
-      <div class="blog-col">
-        <div class="blog-secondary reveal">
-          <div class="blog-date">May 17th, 2022</div>
-          <h4 class="blog-secondary-title">Spray to Inspire</h4>
-          <p class="blog-secondary-excerpt">For most of my life I&apos;ve created art in some form or another, unfortunately I was never the best artist in the class. Matter of fact most of my friends were so much more artistically talented than I. Nevertheless, I ended up being one of the only ones who kept creating art and turned it into a career years later.</p>
-          <a href="https://pixeldab.wordpress.com/2022/05/17/spray-to-inspire/" class="blog-read-more" target="_blank" rel="noopener">Read Article →</a>
-        </div>
-        <div class="blog-secondary reveal">
-          <div class="blog-date">Nov 11th, 2021</div>
-          <h4 class="blog-secondary-title">Squeeze</h4>
-          <p class="blog-secondary-excerpt">I purchased this domain and created this website way back in 2016. I added a few projects I worked on and polished some of the settings. I was proud of this new project. Showing off some of the things I created to the world felt like standing in front of a crowed naked. Yet I let it go to see where all the hard work would take me.</p>
-          <a href="https://pixeldab.wordpress.com/2021/11/11/squeeze/" class="blog-read-more" target="_blank" rel="noopener">Read Article →</a>
-        </div>
-      </div>
-    </div>
   </section>
 
   <!-- CONTACT -->
@@ -1091,6 +1046,67 @@
         nav.style.boxShadow      = '';
       }
     });
+// ── Blog API Fetch ──────────────────────────────
+const BACKEND = 'https://pixeldab-backend.vercel.app';
+
+async function loadBlog() {
+  try {
+    const res  = await fetch(`${BACKEND}/posts`);
+    const data = await res.json();
+    const posts = data.posts;
+    const featured = posts.find(p => p.featured);
+    const secondary = posts.filter(p => !p.featured);
+
+    let html = '';
+
+    // Featured post
+    if (featured) {
+      html += `
+        <div class="blog-featured reveal">
+          <div class="blog-featured-img">
+            <div class="blog-featured-img-inner">
+              ${featured.image
+                ? `<img src="${featured.image}" alt="${featured.title}" class="portfolio-img">`
+                : featured.title}
+            </div>
+          </div>
+          <div class="blog-date">${featured.date}</div>
+          <h3 class="blog-featured-title">${featured.title}</h3>
+          <p class="blog-excerpt">${featured.excerpt}</p>
+          <a href="${featured.link}" class="blog-read-more" target="_blank" rel="noopener">Read Article →</a>
+        </div>`;
+    }
+
+    // Secondary posts split into two columns
+    const col1 = secondary.slice(0, Math.ceil(secondary.length / 2));
+    const col2 = secondary.slice(Math.ceil(secondary.length / 2));
+
+    [col1, col2].forEach(col => {
+      html += `<div class="blog-col">`;
+      col.forEach(post => {
+        html += `
+          <div class="blog-secondary reveal">
+            <div class="blog-date">${post.date}</div>
+            <h4 class="blog-secondary-title">${post.title}</h4>
+            <p class="blog-secondary-excerpt">${post.excerpt}</p>
+            <a href="${post.link}" class="blog-read-more" 
+               target="_blank" rel="noopener">Read Article →</a>
+          </div>`;
+      });
+      html += `</div>`;
+    });
+
+    document.getElementById('blogGrid').innerHTML = html;
+
+    // Re-run reveal observer on new elements
+    document.querySelectorAll('#blogGrid .reveal').forEach(el => io.observe(el));
+
+  } catch (err) {
+    console.error('Blog load error:', err);
+  }
+}
+
+loadBlog();
 
     // ── Hero Canvas — spray pixel field ────────────
     var canvas = document.getElementById('heroCanvas');
