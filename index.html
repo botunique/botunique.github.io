@@ -956,9 +956,14 @@
   <div class="divider"></div>
 
   <!-- BLOG -->
-  <div class="blog-grid" id="blogGrid">
-  <!-- dynamically loaded -->
-  </div>
+  <section id="blog">
+    <div class="blog-header reveal">
+      <div class="section-label">Writing &amp; Thinking</div>
+      <h2 class="blog-title">The <span class="t-yellow">Journal</span></h2>
+    </div>
+    <div class="blog-grid" id="blogGrid">
+      <!-- dynamically loaded -->
+    </div>
   </section>
 
   <!-- CONTACT -->
@@ -1074,7 +1079,7 @@ async function loadBlog() {
                 : featured.title}
             </div>
           </div>
-          ${formatDate(featured.date)}
+          <div class="blog-date">${formatDate(featured.date)}</div>
           <h3 class="blog-featured-title">${featured.title}</h3>
           <p class="blog-excerpt">${featured.excerpt}</p>
           <a href="${featured.link}" class="blog-read-more" target="_blank" rel="noopener">Read Article →</a>
@@ -1090,7 +1095,7 @@ async function loadBlog() {
       col.forEach(post => {
         html += `
           <div class="blog-secondary reveal">
-            ${formatDate(post.date)}
+            <div class="blog-date">${formatDate(post.date)}</div>
             <h4 class="blog-secondary-title">${post.title}</h4>
             <p class="blog-secondary-excerpt">${post.excerpt}</p>
             <a href="${post.link}" class="blog-read-more" 
