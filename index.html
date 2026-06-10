@@ -1058,60 +1058,134 @@ function formatDate(dateStr) {
   const date = new Date(dateStr + 'T00:00:00');
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
-async function loadBlog() {
+function isSafeLink(url) {
+  if (!url) return false;
   try {
-    const res  = await fetch(`${BACKEND}/posts`);
+    return new URL(url).protocol === 'https:';
+  } catch (e) {
+    return false;
+  }
+}
+function isSafeImageSrc(src) {
+  if (!src) return false;
+  if (src.startsWith('images/') && !src.includes('..') && !/^[a-z]+:/i.test(src)) return true;
+  try {
+    return new URL(src).protocol === 'https:';
+  } catch (e) {
+    return false;
+  }
+}
+function createReadMoreLink(url) {
+  if (!isSafeLink(url)) return null;
+  const link = document.createElement('a');
+  link.className = 'blog-read-more';
+  link.href = url;
+  link.target = '_blank';
+  link.rel = 'noopener';
+  link.textContent = 'Read Article →';
+  return link;
+}
+function buildFeaturedPost(post) {
+  const card = document.createElement('div');
+  card.className = 'blog-featured reveal';
+
+  const imgWrap = document.createElement('div');
+  imgWrap.className = 'blog-featured-img';
+  const imgInner = document.createElement('div');
+  imgInner.className = 'blog-featured-img-inner';
+  if (isSafeImageSrc(post.image)) {
+    const img = document.createElement('img');
+    img.src = post.image;
+    img.alt = post.title || '';
+    img.className = 'portfolio-img';
+    imgInner.appendChild(img);
+  } else {
+    imgInner.textContent = post.title || '';
+  }
+  imgWrap.appendChild(imgInner);
+  card.appendChild(imgWrap);
+
+  const dateEl = document.createElement('div');
+  dateEl.className = 'blog-date';
+  dateEl.textContent = formatDate(post.date);
+  card.appendChild(dateEl);
+
+  const titleEl = document.createElement('h3');
+  titleEl.className = 'blog-featured-title';
+  titleEl.textContent = post.title || '';
+  card.appendChild(titleEl);
+
+  const excerptEl = document.createElement('p');
+  excerptEl.className = 'blog-excerpt';
+  excerptEl.textContent = post.excerpt || '';
+  card.appendChild(excerptEl);
+
+  const readMore = createReadMoreLink(post.link);
+  if (readMore) card.appendChild(readMore);
+
+  return card;
+}
+function buildSecondaryPost(post) {
+  const card = document.createElement('div');
+  card.className = 'blog-secondary reveal';
+
+  const dateEl = document.createElement('div');
+  dateEl.className = 'blog-date';
+  dateEl.textContent = formatDate(post.date);
+  card.appendChild(dateEl);
+
+  const titleEl = document.createElement('h4');
+  titleEl.className = 'blog-secondary-title';
+  titleEl.textContent = post.title || '';
+  card.appendChild(titleEl);
+
+  const excerptEl = document.createElement('p');
+  excerptEl.className = 'blog-secondary-excerpt';
+  excerptEl.textContent = post.excerpt || '';
+  card.appendChild(excerptEl);
+
+  const readMore = createReadMoreLink(post.link);
+  if (readMore) card.appendChild(readMore);
+
+  return card;
+}
+async function loadBlog() {
+  const grid = document.getElementById('blogGrid');
+  if (!grid) return;
+  try {
+    const res = await fetch(`${BACKEND}/posts`);
+    if (!res.ok) throw new Error('Posts request failed: ' + res.status);
     const data = await res.json();
     const posts = data.posts;
+    if (!posts || !posts.length) return;
+
     const featured = posts.find(p => p.featured);
     const secondary = posts.filter(p => !p.featured);
+    const fragment = document.createDocumentFragment();
 
-    let html = '';
-
-    // Featured post
     if (featured) {
-      html += `
-        <div class="blog-featured reveal">
-          <div class="blog-featured-img">
-            <div class="blog-featured-img-inner">
-              ${featured.image
-                ? `<img src="${featured.image}" alt="${featured.title}" class="portfolio-img">`
-                : featured.title}
-            </div>
-          </div>
-          <div class="blog-date">${formatDate(featured.date)}</div>
-          <h3 class="blog-featured-title">${featured.title}</h3>
-          <p class="blog-excerpt">${featured.excerpt}</p>
-          <a href="${featured.link}" class="blog-read-more" target="_blank" rel="noopener">Read Article →</a>
-        </div>`;
+      fragment.appendChild(buildFeaturedPost(featured));
     }
 
-    // Secondary posts split into two columns
     const col1 = secondary.slice(0, Math.ceil(secondary.length / 2));
     const col2 = secondary.slice(Math.ceil(secondary.length / 2));
-
     [col1, col2].forEach(col => {
-      html += `<div class="blog-col">`;
-      col.forEach(post => {
-        html += `
-          <div class="blog-secondary reveal">
-            <div class="blog-date">${formatDate(post.date)}</div>
-            <h4 class="blog-secondary-title">${post.title}</h4>
-            <p class="blog-secondary-excerpt">${post.excerpt}</p>
-            <a href="${post.link}" class="blog-read-more" 
-               target="_blank" rel="noopener">Read Article →</a>
-          </div>`;
-      });
-      html += `</div>`;
+      const colEl = document.createElement('div');
+      colEl.className = 'blog-col';
+      col.forEach(post => colEl.appendChild(buildSecondaryPost(post)));
+      fragment.appendChild(colEl);
     });
 
-    document.getElementById('blogGrid').innerHTML = html;
-
-    // Re-run reveal observer on new elements
+    grid.replaceChildren();
+    grid.appendChild(fragment);
     document.querySelectorAll('#blogGrid .reveal').forEach(el => io.observe(el));
-
   } catch (err) {
     console.error('Blog load error:', err);
+    grid.replaceChildren();
+    const msg = document.createElement('p');
+    msg.className = 'blog-excerpt';
+    msg.textContent = 'Unable to load journal posts.';
+    grid.appendChild(msg);
   }
 }
 
