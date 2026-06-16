@@ -198,26 +198,48 @@
     .hero-logo-img { width: 100%; max-width: 620px; display: block; }
     .about-portrait-img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    /* ─── MARQUEE ────────────────────────── */
-    .marquee-section {
-      background: var(--spray-red); overflow: hidden;
-      padding: 0.85rem 0;
-      border-top: 1px solid rgba(0,0,0,0.3);
-      border-bottom: 1px solid rgba(0,0,0,0.3);
-    }
-    .marquee-track {
-      display: flex; white-space: nowrap;
-      animation: marquee 28s linear infinite;
-    }
-    .marquee-item {
-      font-family: var(--font-display); font-size: 0.9rem;
-      letter-spacing: 0.1em; color: var(--concrete);
-      padding: 0 2.5rem; flex-shrink: 0;
-    }
-    .marquee-dot {
-      color: rgba(0,0,0,0.4); font-size: 0.7rem;
-      align-self: center; flex-shrink: 0;
-    }
+   /* ─── STATS BAR ──────────────────────── */
+.stats-bar {
+  background: var(--concrete-mid);
+  border-top: 1px solid rgba(240,236,227,0.05);
+  border-bottom: 1px solid rgba(240,236,227,0.05);
+  padding: 1rem 4rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  letter-spacing: 0.05em;
+  color: var(--spray-red);
+  display: block;
+}
+.stat-txt {
+  font-family: var(--font-mono);
+  font-size: 0.48rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--spray-cyan);
+  display: block;
+  margin-top: 3px;
+}
+.stat-div {
+  width: 1px;
+  height: 2.2rem;
+  background: var(--chalk-dim);
+  opacity: 0.2;
+  flex-shrink: 0;
+}
+
+/* Mobile: hide dividers, center items */
+@media (max-width: 768px) {
+  .stats-bar { padding: 1rem 1.5rem; gap: 1.5rem; }
+  .stat-div { display: none; }
+}
 
     /* ─── SECTIONS ───────────────────────── */
     section { padding: 9rem 4rem; position: relative; }
@@ -793,31 +815,33 @@
     <span class="hero-index">2016 &mdash; 2026 &uarr; PIXELDAB DESIGNS</span>
   </section>
 
-  <!-- MARQUEE -->
-  <div class="marquee-section">
-    <div class="marquee-track">
-      <span class="marquee-item">Visual Identity</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Murals</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Photography</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Art Direction</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Logo Design</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">T-Shirt Design</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Fine Art</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Tattoo Design</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Brand Identity</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Packaging</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Visual Identity</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Murals</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Photography</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Art Direction</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Logo Design</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">T-Shirt Design</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Fine Art</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Tattoo Design</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Brand Identity</span><span class="marquee-dot">&middot;</span>
-      <span class="marquee-item">Packaging</span><span class="marquee-dot">&middot;</span>
-    </div>
+  <!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-num">500,000+</span>
+    <span class="stat-txt">Final Files Exported</span>
   </div>
+  <div class="stat-div"></div>
+  <div class="stat-item">
+    <span class="stat-num">250+</span>
+    <span class="stat-txt">T-Shirts Created</span>
+  </div>
+  <div class="stat-div"></div>
+  <div class="stat-item">
+    <span class="stat-num">175+</span>
+    <span class="stat-txt">Logos Designed</span>
+  </div>
+  <div class="stat-div"></div>
+  <div class="stat-item">
+    <span class="stat-num">40+</span>
+    <span class="stat-txt">Paintings Completed</span>
+  </div>
+  <div class="stat-div"></div>
+  <div class="stat-item">
+    <span class="stat-num">10+</span>
+    <span class="stat-txt">Years Active</span>
+  </div>
+</div>
 
   <!-- ABOUT -->
   <section id="about">
