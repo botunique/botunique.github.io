@@ -8,7 +8,8 @@
 ![Claude](https://img.shields.io/badge/Claude-D4A574?style=for-the-badge&logo=anthropic&logoColor=black)
 ![ChatGPT](https://img.shields.io/badge/ChatGPT-10A37F?style=for-the-badge&logo=openai&logoColor=white)
 ![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
-
+![Mistral](https://img.shields.io/badge/Mistral-9747FF?style=for-the-badge&logo=mistralai&logoColor=white)
+![Proton Luna](https://img.shields.io/badge/Proton%20Luna-8A2BE2?style=for-the-badge&logo=proton&logoColor=white)
 ---
 
 ## 💻 Languages & Scripting
@@ -17,7 +18,7 @@
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
-
+![three.js](https://img.shields.io/badge/three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)
 ---
 
 ## 🖥️ Operating Systems
@@ -50,6 +51,14 @@
 ![GIMP](https://img.shields.io/badge/GIMP-5C5543?style=for-the-badge&logo=gimp&logoColor=white)
 ![Adobe Creative Cloud](https://img.shields.io/badge/Creative%20Cloud-DA1F26?style=for-the-badge&logo=adobecreativecloud&logoColor=white)
 ![Blender](https://img.shields.io/badge/Blender-F5792A?style=for-the-badge&logo=blender&logoColor=white)
+![Notion](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
+![Google Antigravity](https://img.shields.io/badge/Google%20Antigravity-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![Cursor](https://img.shields.io/badge/Cursor-4285F4?style=for-the-badge&logo=cursor&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+![babylon.js](https://img.shields.io/badge/babylon.js-3D8FC6?style=for-the-badge&logo=babylonjs&logoColor=white)
+![Trello](https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white)
+![Graphite](https://img.shields.io/badge/Graphite-5E5E5E?style=for-the-badge&logo=graphite&logoColor=white)
+![WordPress](https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
 
 ---
 
@@ -65,6 +74,7 @@
 ![Epic Games](https://img.shields.io/badge/Epic%20Games-313131?style=for-the-badge&logo=epicgames&logoColor=white)
 ![RetroArch](https://img.shields.io/badge/RetroArch-000000?style=for-the-badge&logo=retroarch&logoColor=white)
 ![Android](https://img.shields.io/badge/Anbernic%20RG556-3DDC84?style=for-the-badge&logo=android&logoColor=black)
+![Xbox](https://img.shields.io/badge/Xbox-107C10?style=for-the-badge&logo=xbox&logoColor=white)
 
 ---
 
