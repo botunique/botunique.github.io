@@ -8,7 +8,11 @@
 ![ChatGPT](https://img.shields.io/badge/ChatGPT-10A37F?style=for-the-badge&logo=openai&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude-D4A574?style=for-the-badge&logo=anthropic&logoColor=black)
 ![Gemini](https://img.shields.io/badge/Gemini-8E75B2?style=for-the-badge&logo=googlegemini&logoColor=white)
+![Grok](https://img.shields.io/badge/Grok-000000?style=for-the-badge&logo=x&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)
+![LM Studio](https://img.shields.io/badge/LM%20Studio-4B0082?style=for-the-badge)
 ![Mistral](https://img.shields.io/badge/Mistral-9747FF?style=for-the-badge&logo=mistralai&logoColor=white)
+![Muse](https://img.shields.io/badge/Muse-0467DF?style=for-the-badge&logo=meta&logoColor=white)
 ![Proton Luna](https://img.shields.io/badge/Proton%20Luna-8A2BE2?style=for-the-badge&logo=proton&logoColor=white)
 ---
 
