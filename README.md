@@ -23,15 +23,25 @@
 
 ## 🖥️ Hardware Fleet
 
-| Machine | CPU | RAM | Role |
-|---|---|---|---|
-| **Anbernic RG556** | Android | 8GB DDR4 | Retro Gaming / Streaming |
-| **Delspire-Laptop** | Intel i5-8250U | 8GB DDR4 | Projects / Remote Console |
-| **MacBook Pro** | Apple M3 Ultra | 64GB | Work / Graphic Design |
-| **OneXPlayer Mini** | Intel i7 | 16GB DDR4 | Handheld Gaming PC |
-| **Raspberry Pi 5** | BCM2712 | 8GB | Homelab Primary |
-| **Ubuntu Server** | Intel i5 | 8GB DDR3 | Homelab Secondary *(WIP)* |
-| **XZ5700X** | AMD Ryzen 7 5700X | 32GB DDR4 | Heavy Gaming / Power Tasks |
+| Machine | CPU / Chip | RAM | OS | Role |
+|---|---|---|---|---|
+| **XZ5700X** | AMD Ryzen 7 5700X + Intel Arc B580 12GB | 32GB DDR4 | Windows 11 | Heavy gaming / local LLM inference |
+| **Tuxedo Fold** *(daily driver)* | Intel i5-1135G7 · Iris Xe | 16GB | Fedora 44 · KDE Plasma 6 | Dev, coding, music plugins, remote console |
+| **MacBook Pro 16"** | Apple M3 Ultra | 64GB | macOS | Work / graphic design |
+| **Raspberry Pi 5** | BCM2712 | 8GB | Raspberry Pi OS Lite | Homelab primary (Docker stack) |
+| **Raspberry Pi 3B** | BCM2837 | 1GB | OctoPi | OctoPrint controller for the Ender 3 Pro |
+| **Ubuntu Server** | Intel i5 | 8GB DDR3 | Ubuntu Server | Local voice AI hub (speech-to-text / text-to-speech) |
+| **Bazzite Box** | AMD Ryzen 5 Pro 5650GE | 16GB | Bazzite Linux | Steam, retro emulation, Stremio |
+| **OneXPlayer Mini** | Intel i7 · Iris Xe | 16GB DDR4 | Windows | Handheld gaming PC |
+| **Anbernic RG556** | Unisoc T820 | 8GB | Android | Retro gaming / streaming |
+
+### 🔌 Microcontrollers & Makers Gear
+| Device | Use |
+|---|---|
+| **ESP32-S3 2.8" touch board** | Handheld voice device build |
+| **Waveshare ESP32-S3 2.06" AMOLED** | Custom smartwatch firmware |
+| **ESP32-S3 CAM (OV3660)** | Camera / vision node |
+| **Creality Ender 3 Pro** | 3D printing (OctoPrint + PrusaSlicer) |
 
 ---
 
@@ -60,12 +70,33 @@
 
 ## 💻 Languages & Scripting
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
+![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=cplusplus&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![YAML](https://img.shields.io/badge/YAML-CB171E?style=for-the-badge&logo=yaml&logoColor=white)
 ![three.js](https://img.shields.io/badge/three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)
---- 
+
+---
+
+## 🧩 Dev Stack
+![Arduino](https://img.shields.io/badge/Arduino-00878F?style=for-the-badge&logo=arduino&logoColor=white)
+![ESP32-S3](https://img.shields.io/badge/ESP32--S3-E7352C?style=for-the-badge&logo=espressif&logoColor=white)
+![LVGL](https://img.shields.io/badge/LVGL-343839?style=for-the-badge)
+![SquareLine Studio](https://img.shields.io/badge/SquareLine%20Studio-5C2D91?style=for-the-badge)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-5FA04E?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![Whisper](https://img.shields.io/badge/Whisper-412991?style=for-the-badge&logo=openai&logoColor=white)
+![Piper TTS](https://img.shields.io/badge/Piper%20TTS-2E7D32?style=for-the-badge)
+![LM Studio](https://img.shields.io/badge/LM%20Studio-4B0082?style=for-the-badge)
+![systemd](https://img.shields.io/badge/systemd-30D475?style=for-the-badge&logo=linux&logoColor=black)
+![Open-Meteo](https://img.shields.io/badge/Open--Meteo-FF8800?style=for-the-badge)
+
+---
 
 ## 🎵 Music Production
 ![Ableton Live](https://img.shields.io/badge/Ableton%20Live-000000?style=for-the-badge&logo=abletonlive&logoColor=white)
@@ -76,6 +107,9 @@
 
 ## 🖥️ Operating Systems
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=black)
+![Bazzite](https://img.shields.io/badge/Bazzite-8A4FFF?style=for-the-badge&logo=linux&logoColor=white)
+![Fedora](https://img.shields.io/badge/Fedora-51A2DA?style=for-the-badge&logo=fedora&logoColor=white)
+![KDE Plasma](https://img.shields.io/badge/KDE%20Plasma-1D99F3?style=for-the-badge&logo=kdeplasma&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![macOS](https://img.shields.io/badge/macOS-000000?style=for-the-badge&logo=apple&logoColor=white)
 ![Raspberry Pi OS](https://img.shields.io/badge/Raspberry%20Pi%20OS-A22846?style=for-the-badge&logo=raspberrypi&logoColor=white)
@@ -84,10 +118,17 @@
 
 ---
 
+## 🖨️ 3D Printing & CAD
+![Blender](https://img.shields.io/badge/Blender-F5792A?style=for-the-badge&logo=blender&logoColor=white)
+![FreeCAD](https://img.shields.io/badge/FreeCAD-729FCF?style=for-the-badge&logo=freecad&logoColor=white)
+![OctoPrint](https://img.shields.io/badge/OctoPrint-13C100?style=for-the-badge&logo=octoprint&logoColor=white)
+![PrusaSlicer](https://img.shields.io/badge/PrusaSlicer-FA6831?style=for-the-badge&logo=prusa&logoColor=white)
+
+---
+
 ## 🔧 Random Tools & Software
 ![Adobe Creative Cloud](https://img.shields.io/badge/Creative%20Cloud-DA1F26?style=for-the-badge&logo=adobecreativecloud&logoColor=white)
 ![babylon.js](https://img.shields.io/badge/babylon.js-3D8FC6?style=for-the-badge&logo=babylonjs&logoColor=white)
-![Blender](https://img.shields.io/badge/Blender-F5792A?style=for-the-badge&logo=blender&logoColor=white)
 ![Brave](https://img.shields.io/badge/Brave-FB542B?style=for-the-badge&logo=brave&logoColor=white)
 ![Cursor](https://img.shields.io/badge/Cursor-4285F4?style=for-the-badge&logo=cursor&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
@@ -100,5 +141,10 @@
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
 ![WordPress](https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![Inkscape](https://img.shields.io/badge/Inkscape-000000?style=for-the-badge&logo=inkscape&logoColor=white)
+![KeePassXC](https://img.shields.io/badge/KeePassXC-6CAC4D?style=for-the-badge&logo=keepassxc&logoColor=white)
+![Proton VPN](https://img.shields.io/badge/Proton%20VPN-6D4AFF?style=for-the-badge&logo=protonvpn&logoColor=white)
 
 ---
