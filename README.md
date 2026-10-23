@@ -14,7 +14,9 @@
 
 ## 🎮 Gaming & Emulation
 ![Anbernic RG556](https://img.shields.io/badge/Anbernic%20RG556-3DDC84?style=for-the-badge&logo=android&logoColor=black)
+![EmulationStation](https://img.shields.io/badge/EmulationStation-1D4E89?style=for-the-badge)
 ![Epic Games](https://img.shields.io/badge/Epic%20Games-313131?style=for-the-badge&logo=epicgames&logoColor=white)
+![PlayStation](https://img.shields.io/badge/PlayStation-003791?style=for-the-badge&logo=playstation&logoColor=white)
 ![RetroArch](https://img.shields.io/badge/RetroArch-000000?style=for-the-badge&logo=retroarch&logoColor=white)
 ![Steam](https://img.shields.io/badge/Steam-1B2838?style=for-the-badge&logo=steam&logoColor=white)
 ![Xbox](https://img.shields.io/badge/Xbox-107C10?style=for-the-badge&logo=xbox&logoColor=white)
