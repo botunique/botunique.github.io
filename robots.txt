@@ -1,0 +1,35 @@
+# PixelDab robots.txt
+# Regular search engines (Google, Bing, etc.) are welcome.
+User-agent: *
+Allow: /
+
+# AI *training* crawlers are blocked, so the portfolio isn't used to train models.
+# AI *search* assistants (that link back to the site) are still allowed.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+Sitemap: https://pixeldab.com/sitemap.xml
